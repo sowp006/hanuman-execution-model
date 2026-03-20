@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Light warm gray background — #F6F8FB → oklch(0.971 0.005 247) */
+    --background: 0.971 0.005 247;
+    /* Near-black text — #111827 → oklch(0.197 0.018 252) */
+    --foreground: 0.197 0.018 252;
+
+    /* White card */
+    --card: 1 0 0;
+    --card-foreground: 0.197 0.018 252;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.197 0.018 252;
+
+    /* Gold accent — #C9A46A → oklch(0.72 0.09 67) */
+    --primary: 0.72 0.09 67;
+    --primary-foreground: 1 0 0;
+
+    /* Soft secondary */
+    --secondary: 0.96 0.008 60;
+    --secondary-foreground: 0.197 0.018 252;
+
+    /* Muted — light gray #6B7280 → oklch(0.556 0.01 264) */
+    --muted: 0.96 0.005 247;
+    --muted-foreground: 0.556 0.01 264;
+
+    /* Accent pale sand — #F4EBDD → oklch(0.94 0.03 72) */
+    --accent: 0.94 0.03 72;
+    --accent-foreground: 0.3 0.04 67;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Borders — #E5E7EB → oklch(0.922 0.005 247) */
+    --border: 0.922 0.005 247;
+    --input: 0.922 0.005 247;
+    --ring: 0.72 0.09 67;
+
+    --chart-1: 0.72 0.09 67;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.197 0.018 252;
+    --sidebar-primary: 0.72 0.09 67;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.94 0.03 72;
+    --sidebar-accent-foreground: 0.3 0.04 67;
+    --sidebar-border: 0.922 0.005 247;
+    --sidebar-ring: 0.72 0.09 67;
+
+    /* Custom tokens */
+    --gold: 0.72 0.09 67;
+    --gold-light: 0.94 0.03 72;
+    --gold-dark: 0.55 0.1 67;
+    --warm-bg: 0.97 0.015 70;
+    --section-warm: 0.965 0.02 70;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .font-serif-display {
+    font-family: "DM Serif Display", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .section-fade {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gold-text {
+    color: oklch(var(--gold));
+  }
+
+  .gold-bg {
+    background-color: oklch(var(--gold));
+  }
+
+  .gold-border {
+    border-color: oklch(var(--gold));
+  }
+
+  .warm-section {
+    background-color: oklch(var(--section-warm));
+  }
+
+  .hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(201, 164, 106, 0.15);
+  }
+
+  .nav-link-active::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: oklch(var(--gold));
+    border-radius: 99px;
+    margin-top: 2px;
+  }
+}
