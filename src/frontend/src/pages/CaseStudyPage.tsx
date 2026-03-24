@@ -26,6 +26,11 @@ const CASE_STUDY_STEPS = [
     action:
       "Weekly stakeholder demos, open Slack channels, and honest blocker reports eliminated surprise failures and built investor trust.",
   },
+  {
+    pillar: "Delivery",
+    action:
+      "The final app was shipped, verified with real users, and handed over to the client with full documentation. The loop closed — value reached the end recipient.",
+  },
 ];
 
 const METRICS = [

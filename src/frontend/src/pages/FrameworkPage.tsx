@@ -1,4 +1,5 @@
 import {
+  CheckCircle,
   Map as MapIcon,
   MessageSquare,
   RefreshCw,
@@ -48,6 +49,14 @@ const PILLARS = [
     detail:
       "When Hanuman returned from Lanka, his detailed, honest report gave Rama and the Vanara army everything they needed to plan the final campaign with confidence.",
   },
+  {
+    num: "06",
+    title: "Delivery",
+    desc: "Complete the mission and close the loop. True execution isn't done until the outcome is delivered, verified, and handed over. Hanuman didn't just find Sita — he returned with proof and enabled the rescue.",
+    icon: CheckCircle,
+    detail:
+      "Hanuman's mission was complete only when Rama received his report, believed it, and could act on it. Delivery means the value reaches the end recipient — not just that work was done.",
+  },
 ];
 
 const FLOW_STEPS = [
@@ -62,9 +71,6 @@ const FLOW_STEPS = [
 export default function FrameworkPage() {
   useFadeIn();
 
-  const lastPillar = PILLARS[4];
-  const LastIcon = lastPillar.icon;
-
   return (
     <div className="pt-28 pb-24">
       <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mb-16">
@@ -76,16 +82,16 @@ export default function FrameworkPage() {
             The HEM Framework
           </h1>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Five pillars of execution — each a phase of the project and a
-            quality of character. HEM is as much a leadership philosophy as a
-            project methodology.
+            Six pillars of execution — each a phase of the project and a quality
+            of character. HEM is as much a leadership philosophy as a project
+            methodology.
           </p>
         </div>
       </section>
 
       <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mb-16">
         <div className="grid md:grid-cols-2 gap-5">
-          {PILLARS.slice(0, 4).map((pillar, idx) => {
+          {PILLARS.map((pillar, idx) => {
             const PillarIcon = pillar.icon;
             return (
               <div
@@ -124,41 +130,6 @@ export default function FrameworkPage() {
               </div>
             );
           })}
-        </div>
-        <div className="mt-5">
-          <div
-            className="section-fade bg-white rounded-2xl p-7 border border-border shadow-card hover-lift"
-            style={{ transitionDelay: "0.32s" }}
-          >
-            <div className="flex items-start gap-4">
-              <div className="shrink-0">
-                <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center">
-                  <LastIcon className="w-5 h-5 gold-text" />
-                </div>
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-black gold-text tracking-wider">
-                    {lastPillar.num}
-                  </span>
-                  <h3 className="text-base font-bold text-foreground">
-                    {lastPillar.title}
-                  </h3>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                  {lastPillar.desc}
-                </p>
-                <div className="bg-accent/50 rounded-lg p-3 border border-amber-100">
-                  <p className="text-xs text-foreground/70 italic leading-relaxed">
-                    <span className="font-semibold gold-text not-italic">
-                      Ramayana insight:{" "}
-                    </span>
-                    {lastPillar.detail}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

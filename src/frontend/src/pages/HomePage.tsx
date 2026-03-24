@@ -1,6 +1,7 @@
 import {
   ArrowRight,
   BookOpen,
+  CheckCircle,
   ChevronRight,
   Map as MapIcon,
   MessageSquare,
@@ -19,6 +20,7 @@ const PILLARS = [
   { num: "03", title: "Courageous Execution", icon: Zap },
   { num: "04", title: "Adaptability", icon: RefreshCw },
   { num: "05", title: "Communication", icon: MessageSquare },
+  { num: "06", title: "Delivery", icon: CheckCircle },
 ];
 
 export default function HomePage() {
@@ -82,7 +84,7 @@ export default function HomePage() {
                     <span className="text-white text-xs font-bold">ॐ</span>
                   </div>
                   <span className="font-bold text-sm text-foreground">
-                    5 Pillars of HEM
+                    6 Pillars of HEM
                   </span>
                 </div>
                 {PILLARS.map((p, idx) => (
@@ -122,7 +124,7 @@ export default function HomePage() {
             {
               icon: Target,
               label: "Framework",
-              desc: "The 5 pillars of HEM — Purpose, Planning, Execution, Adaptability, Communication.",
+              desc: "The 6 pillars of HEM — Purpose, Planning, Execution, Adaptability, Communication, Delivery.",
               page: "framework" as const,
               tag: "Core Model",
             },
@@ -177,7 +179,7 @@ export default function HomePage() {
         <div className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
           <div className="grid sm:grid-cols-3 gap-6 text-center">
             {[
-              { value: "5", label: "Core Pillars" },
+              { value: "6", label: "Core Pillars" },
               { value: "3000+", label: "Years of Wisdom" },
               { value: "∞", label: "Applications" },
             ].map((stat) => (
